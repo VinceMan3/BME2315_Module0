@@ -59,21 +59,21 @@ print(total) # prints the final sum
 # What is the standard deviation of the first 10 numbers in the fibonacci sequence? Use the numpy library to calculate the standard deviation.
 
 # Code for the list
-a = 0
-b = 1
+a = 0   # First Fibonacci number
+b = 1   # Second Fibonacci number
 fib_list = []  # empty list to store the Fibonacci numbers
 
-for i in range(10):  
+for i in range(10):  # loops through 10 times
     fib_list.append(a)  # adds the new number to the list
-    next_value = a + b
-    a = b
-    b = next_value
+    next_value = a + b  # the next number in the sequence 
+    a = b   # moves a onto the next number
+    b = next_value  # b goes to the number after a in the sequence 
 
 print(fib_list)
 
 import numpy as np
 
-std_dev = np.std(fib_list)
+std_dev = np.std(fib_list)  # calculates the standard deviation of the list using numpy
 print(std_dev)
 
 # Standard Deviation = 10.47
@@ -85,14 +85,16 @@ print(std_dev)
 
 def fib_sum(N):
     a, b = 0, 1 # more compact way of storing variables a and b 
-    total = 0
-    for i in range(N):
-        total = total + a
-        a, b = b, a + b
+    total = 0   # sum of the first N Fibonacci numbers 
+    for i in range(N):  # loops N times
+        total = total + a   # adds current number to the total 
+        a, b = b, a + b # uodates a and b to the next set
     return total
 
-results = [fib_sum(n) for n in [5, 10, 15, 20, 25, 30]]
+results = [fib_sum(n) for n in [5, 10, 15, 20, 25, 30]] # find the sum for each N in the list
 print(results)
+
+# Result: [7, 88, 986, 10945, 121392, 1346268}
 
 # %% ###########################################################
 # Problem 5: Read your error messages
